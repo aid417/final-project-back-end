@@ -10,6 +10,7 @@ class UsersController < ApplicationController
 
   # GET /users/1 
   def show
+  
     render json: @user.to_json(include: [:articles, :merges])
   end
 
@@ -18,6 +19,8 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
+    
+      DailyMailer.with(user: @user).new_daily_email.deliver_later
       render json: @user, status: :created, location: @user	       
     else	    
       render json: @user.errors, status: :unprocessable_entity

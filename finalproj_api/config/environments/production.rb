@@ -61,6 +61,37 @@ Rails.application.configure do
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
+#   config.action_mailer.perform_deliveries = true
+#   config.action_mailer.raise_delivery_errors = true
+#   config.action_mailer.default_options = {from: 'ga.final.project.news@gmail.com'}
+
+  config.action_mailer.delivery_method = :smtp
+# host = 'localhost:3000' #replace with your own url
+# config.action_mailer.default_url_options = { :host => 'localhost:3000', protocol: 'http' }
+
+# SMTP settings for gmail
+# config.action_mailer.smtp_settings = {
+#   :address              => "smtp.gmail.com",
+#   :port                 => 587,
+#   :user_name            => "ga.final.project.news@gmail.com",
+#   :password             => "sgwmdauxljiryxxx ",
+#   :authentication       => "plain",
+#   :enable_starttls_auto => true
+# }
+config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+config.action_mailer.raise_delivery_errors = true
+config.action_mailer.perform_deliveries = true 
+config.active_job.queue_adapter = :async
+ActionMailer::Base.delivery_method = :smtp
+ActionMailer::Base.smtp_settings = {
+   :address => "smtp.gmail.com",
+   :port => 587,
+   :domain => "gmail.com",
+   :authentication => 'plain',
+   :user_name => "ga.final.project.news@gmail.com",
+   :password => "sgwmdauxljiryxxx",
+   :enable_starttls_auto => true
+}
   config.i18n.fallbacks = true
 
   # Send deprecation notices to registered listeners.
