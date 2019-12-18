@@ -20,7 +20,7 @@ class UsersController < ApplicationController
 
     if @user.save
     
-      DailyMailer.with(user: @user).new_daily_email.deliver_later
+      
       render json: @user, status: :created, location: @user	       
     else	    
       render json: @user.errors, status: :unprocessable_entity
