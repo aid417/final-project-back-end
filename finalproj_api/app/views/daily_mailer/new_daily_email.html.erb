@@ -8,7 +8,10 @@
     <p> Here are the articles you have saved for later: </p>
 
     <% @user.articles.each do |article| %>
-<p> <%= article.url %> </p>
+      <h3><%= article.title %> </h3>
+      <a href=<%= article.url %> > <img src=<%= article.image %> alt="article image"  height="100"
+      width="150">
+</a>
 <% end %>
 
 
