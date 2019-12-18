@@ -5,6 +5,11 @@
   </head>
   <body>
     <p> Hello <%= @user.name %>  </p>
+    <p> Here are the articles you have saved for later: </p>
+
+    <% @user.articles.each do |article| %>
+<p> <%= article.url %> </p>
+<% end %>
 
 
  

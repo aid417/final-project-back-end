@@ -25,6 +25,6 @@ set :environment, "development"
 # ENV[‘RAILS_ENV’] = “production”
 # env :PATH, ENV['PATH']
 
-every :day, :at => '5:10 pm' do
+every :day, :at => '8:00 am' do
     rake "email_sender" 
   end 
