@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <p> Hello <%= @user.name %>  </p>
+    <p> Here are the articles you have saved for later: </p>
+
+    <% @user.articles.each do |article| %>
+      <h3><%= article.title %> </h3>
+      <a href=<%= article.url %> > <img src=<%= article.image %> alt="article image"  height="100"
+      width="150">
+</a>
+<% end %>
+
+
+ 
+
+  </body>
+</html>  

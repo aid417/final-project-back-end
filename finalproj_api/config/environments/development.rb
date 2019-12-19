@@ -24,7 +24,7 @@ Rails.application.configure do
 
     config.cache_store = :null_store
   end
-  config.action_mailer.delivery_method = :sendmail
+  # config.action_mailer.delivery_method = :smtp
   # Defaults to:
   # config.action_mailer.sendmail_settings = {
   #   location: '/usr/sbin/sendmail',
@@ -40,7 +40,7 @@ address:              'smtp.gmail.com',
 port:                 587,
 domain:               'example.com',
 user_name:            'ga.final.project.news@gmail.com',
-password:             'Ianjames97',
+password:             'sgwmdauxljiryxxx',
 authentication:       'plain',
 enable_starttls_auto: true  }
   # Store uploaded files on the local file system (see config/storage.yml for options).
